@@ -1,0 +1,135 @@
+#name{
+    position: fixed;
+    font-family: 'Georgia', Times, Times New Roman, serif;
+    height: 10px;
+    padding: 20px 20px 30px 20px;
+    text-align: center;
+    background: #4aaaa5;
+    color: white;
+    left: 20%;
+}
+header{
+    background: #ffffff;
+    height: 60px;
+    border-color: #4aaaa5;
+}
+nav{
+    float: right;
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    width: 500px;
+    height: 10px;
+    text-align: center;
+    background: white;
+}
+ 
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: #777777;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+  }
+  #body {
+    position: fixed;
+    top:65px;
+    width: 100%;
+    height: 550px;
+    text-align: center;
+    background: lightgray;
+  }
+
+  #main {
+    margin: 10px 0 0 0;
+    position: fixed;
+    right: 10%;
+    left: 20%;
+    width: 960px;
+    height: 500px;
+    background:#ffffff;
+  }
+  h2{
+      color: #4aaaa5;
+      text-align: left;
+  }
+  img {
+    width: 125px;
+    height: 135px;
+    padding: 20px;
+    float: left;
+  }
+  #entry1{
+    color: #4aaaa5;
+    font-size: 20px;
+    font-family: 'Georgia', Times, Times New Roman, serif;
+    text-align: left;
+    margin: 20px;
+    padding: 10px 0 20px 0;
+    border-bottom: 3px solid lightgray;
+  }
+  #pic{
+    margin: 20px;
+    padding: 10px 0 0 0;
+}
+#text1{
+    text-align: left;
+    line-height: 40px;
+    color: #777777;
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+}
+#footer{
+    position: fixed;
+    top: 600px;
+    background-color: #666666;
+    height: 50px;
+    border-top: 5px solid #4aaaa5;
+    width: 100%;
+}
+#entry2{
+    color: #4aaaa5;
+    font-size: 20px;
+    font-family: 'Georgia', Times, Times New Roman, serif;
+    text-align: left;
+    margin: 20px;
+    padding: 10px 0 20px 0;
+    border-bottom: 3px solid lightgray;
+  }
+#row2{
+    position: absolute;
+    top: 250px;
+    left: 0px;
+}
+#entry3{
+    float: left;
+    margin: 10px;
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    color: #777777;
+}
+label{
+    position: absolute;
+    left: 20px;
+}
+input{
+    position: absolute;
+    left: 25px;
+    rows: 10;
+}
+#button{
+    color: white;
+    background-color: #4aaaa5;
+    padding: 10px;
+    font-family: 'Georgia', Times, Times New Roman, serif;
+}
