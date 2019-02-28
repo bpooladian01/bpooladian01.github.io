@@ -1,0 +1,24 @@
+body{
+    background-image: url(background2.png);
+}
+
+.title{
+    font-family: 'Oswald', sans-serif;
+    font-style: italic;
+    color: whitesmoke;
+}
+
+#instructions{
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    color: whitesmoke;
+    font-size: 150%;
+}
+
+.questions{
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    color: whitesmoke;
+    font-size: 150%;
+}
+

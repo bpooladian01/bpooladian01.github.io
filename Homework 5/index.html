@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">;
+    <link rel="stylesheet" type="text/css" href="assets/css.css">
+</head>
+<body>
+    <h1 class="title text-center">Quiz Game</h1>;
+    <div class="container">;
+        <div class="row">;
+            <div class="col-md-3">;
+            </div>;
+            <div class="col-md-6" id="instructions">
+                <P>These are the instructions for the quiz game</P>
+                <br>
+                <P>You will have 100 seconds to complete the quiz</P>
+                <br>
+                <button type="button" class="btn btn-primary" id="start">Click here to Start</button>
+            </div>
+        </div>
+        <div id="something">
+        <div class="row questions">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-6" id="question1">
+                <p>How many planets are in the solar system?</p>
+                    <label class="radio-inline bg-success">
+                        <input type="radio" name="optradio"> 9
+                        <input type="radio" name="optradio"> 8
+                        <input type="radio" name="optradio"> 4
+                        <input type="radio" name="optradio"> 5
+                    </label>
+            </div>
+        </div>
+        <br>
+        <div class="row questions">
+            <div class="col-md-3">
+            </div>    
+            <div class="col-md-6" id="question2">
+                <p>How many moons does Mars have?</p>
+                    <label class="radio-inline bg-success">
+                        <input type="radio" name="optradio"> 7
+                        <input type="radio" name="optradio"> 1
+                        <input type="radio" name="optradio"> 4
+                        <input type="radio" name="optradio"> 2
+                    </label>
+            </div>
+        </div>
+        <br>
+        <div class="row questions">
+            <div class="col-md-3">
+            </div>    
+            <div class="col-md-6" id="question3">
+                <p>What is the 6th planet from the Sun?</p>
+                <label class="radio-inline bg-success">
+                        <input type="radio" name="optradio"> Jupiter
+                        <input type="radio" name="optradio"> Saturn
+                        <input type="radio" name="optradio"> Mars
+                        <input type="radio" name="optradio"> Neptune
+                    </label>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/java.js"></script>
+</body>
+</html>
