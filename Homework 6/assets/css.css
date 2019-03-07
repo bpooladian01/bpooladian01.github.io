@@ -1,0 +1,20 @@
+#topic-form{
+    float: right;
+}
+
+#button-view{
+    padding: 25px;
+}
+
+.testbutton{
+    margin: 10px;
+}
+
+.gifImage{
+    float: left;
+    margin: 10px;
+}
+
+p{
+    float: left;
+}

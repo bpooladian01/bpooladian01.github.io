@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css.css">
+    <title>Gif Homework</title>
+</head>
+<body>
+<div class="container"> 
+<div id="button-view" class="row"></div>
+<form id="topic-form" class="row">  
+    <label for="topic-input">
+        <h4>Pick a new topic: <br></h4>
+    </label>
+    <input type="add-topic" id="topic-input">
+    <input id="add-topic" class="btn btn-primary" type="submit">
+</form>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+<div id="gifs"></div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+    var topics = ["batman", "star trek", "starcraft", "futurama", "battlestar galactica"];
+    function topicName() {
+        var topicName = $(this).attr("data-name");
+    }
+    function renderButtons(){
+        $("#button-view").empty();
+        for (var i = 0; i < topics.length; i++) {
+            var a = $("<button>");
+            a.addClass("testbutton")
+            a.addClass("btn btn-primary");
+            a.attr("data-name", topics[i]);
+            a.text(topics[i]);
+            $("#button-view").append(a);
+        }
+            buttonPress();
+    }
+    
+    $("#add-topic").on("click", function(event){
+        event.preventDefault();
+        var topic = $("#topic-input").val().trim();
+        topics.push(topic);
+        console.log(topics);
+        renderButtons();
+        $("#topic-input").val("");
+    })
+    renderButtons();
+
+    function buttonPress(){
+    $("button").on("click", function() {
+        var apiKey = "GhvlxN8zEnGj8kX6X1VNTvnf4MdZdQ8W";
+        var pickedTopic = $(this).attr("data-name");
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + pickedTopic + 
+        "&api_key=" + apiKey + "&limit=10";
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function(response) {
+            console.log(response);
+            var results = response.data;
+            for (var i = 0; i < results.length; i++) {
+                var gifDiv = $("<div>");
+                var rating = results[i].rating;
+                var p = $("<p>").text("Rating: " + rating);
+                var topicImage = $("<img>");
+                topicImage.attr("src", results[i].images.fixed_width_still.url);
+                topicImage.addClass("gifImage");
+                topicImage.attr("data-state", "still");
+                topicImage.attr("data-animate", results[i].images.fixed_width.url);
+                topicImage.attr("data-still", results[i].images.fixed_width_still.url);
+                gifDiv.append(p);
+                gifDiv.append(topicImage);
+                $("#gifs").prepend(gifDiv);
+            }
+        })
+    
+    })
+    }
+    $(document).on("click", ".gifImage", function(){
+        var state = $(this).attr("data-state");
+        if (state === "still") {
+        $(this).attr("src", $(this).attr("data-animate"));
+        $(this).attr("data-state", "animate");
+        }
+        else {
+            $(this).attr("src", $(this).attr("data-still"));
+            $(this).attr("data-state", "still");
+        }
+    })
+    
+
+</script>
+</body>
+</html>
+
