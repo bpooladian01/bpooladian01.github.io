@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Homework3</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <h1>The Psychic Game</h1>
+    <br>
+    <h2>Guess what letter I'm thinking of</h2>
+    <br>
+    <h3 id="wins-text">Wins:</h3>
+    <br>
+    <h3 id="losses-text">Losses:</h3>
+    <br>
+    <h3>Guesses Left: <span id = "guesses-text">9</span></h3>
+    <br>
+    <h3 id="letterpick"></h3>
+
+    <script type="text/javascript">
+        var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+        var wins = 0;
+        var losses = 0;
+        var guessesLeft = 9;
+        var winsText = $("#wins-text");
+        // var winsText = document.getElementById("wins-text");
+        var lossesText = $("#losses-text");
+        var guessesText = $("#guesses-text");
+        // var lossesText = document.getElementById("losses-text");
+        var computerPicks = computerChoices[Math.floor(Math.random()*computerChoices.length)];
+        var losingPicks = [];
+        function gameRun() {
+            guessesLeft = 9;
+            computerPicks = computerChoices[Math.floor(Math.random()*computerChoices.length)];
+            guessesText.text(guessesLeft);
+            losingPicks = [];
+            letterpick.textContent = "You picked: " + losingPicks;
+        };
+        document.onkeyup = function(event) {
+        var userGuess = event.key;
+        userGuess = userGuess.toLowerCase();
+        console.log(computerPicks);
+            if (computerChoices.indexOf(userGuess) === -1 || losingPicks.indexOf(userGuess) >= 0){
+                return false;
+            }
+            // console.log(computerPicks);
+                if (userGuess === computerPicks) {
+                    wins++;
+                    winsText.text("wins: " + wins);
+                    gameRun();
+                }
+                else {
+                    guessesLeft--;
+                    if (guessesLeft === 0) {
+                        losses++;
+                        lossesText.text("losses: " + losses);
+                        gameRun();
+                    }
+                    else {
+                        losingPicks.push(userGuess)
+                        guessesText.text(guessesLeft);
+                        letterpick.textContent = "You picked: " + losingPicks.join(", ");
+                    }
+                } 
+        }
+    
+    
+    
+    
+    </script>
+
+</body>
+</html>
